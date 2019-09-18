@@ -3,6 +3,9 @@ package com.mucahitkambur.kariyerchallenge.di
 import android.app.Application
 import android.content.Context
 import com.mucahitkambur.kariyerchallenge.BuildConfig
+import com.mucahitkambur.kariyerchallenge.network.ApiService
+import com.mucahitkambur.kariyerchallenge.util.API_URL
+import com.mucahitkambur.tdksozluk.util.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -41,7 +44,7 @@ class AppModule {
     @Provides
     fun provideService(httpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.END_POINT)
+            .baseUrl(API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .client(httpClient)

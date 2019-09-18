@@ -1,6 +1,6 @@
 package com.mucahitkambur.kariyerchallenge.di
 
-import com.mucahitkambur.kariyerchallenge.di.ui.MainActivity
+import com.mucahitkambur.kariyerchallenge.ui.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
