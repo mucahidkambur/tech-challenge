@@ -11,32 +11,101 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12"/>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_market"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_market"
+            android:textStyle="bold"
             android:textSize="36sp"
             android:textColor="@color/red"
             android:textAllCaps="true"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:hint="@string/text_person_hint"
-            android:background="@drawable/edit_login"
-            android:layout_marginStart="42dp"
-            android:layout_marginEnd="42dp"
-            android:drawablePadding="16dp"
-            android:paddingStart="16dp"
-            android:drawableLeft="@drawable/ic_person"
-            app:layout_constraintTop_toBottomOf="@+id/title_market"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/guideline_1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_person"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:inputType="text"
+            android:background="@drawable/edit_login"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="16dp"
+            android:hint="@string/text_person_hint"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_2" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/text_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edit_login"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawablePadding="16dp"
+            android:hint="@string/text_password_hint"
+            android:paddingStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_person" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:theme="@style/Base.Switch"
+            android:id="@+id/switch_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/text_password"
+            app:layout_constraintTop_toBottomOf="@+id/text_password" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:text="@string/text_remember_switch"
+            app:layout_constraintBottom_toBottomOf="@+id/switch_remember"
+            app:layout_constraintStart_toEndOf="@+id/switch_remember"
+            app:layout_constraintTop_toTopOf="@+id/switch_remember" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/button_rounded"
+            android:foreground="?selectableItemBackground"
+            android:text="@string/text_login"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_password"
+            app:layout_constraintStart_toStartOf="@+id/text_password"
+            app:layout_constraintTop_toBottomOf="@+id/switch_remember" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

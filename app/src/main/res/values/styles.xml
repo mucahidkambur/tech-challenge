@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Base.Switch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/red</item>
+        <item name="colorSwitchThumbNormal">@color/black</item>
+        <item name="android:colorForeground">@color/black</item>
+    </style>
+
 </resources>

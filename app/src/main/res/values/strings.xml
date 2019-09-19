@@ -2,4 +2,8 @@
     <string name="app_name">Kariyer Challenge</string>
     <string name="title_market">Marketim</string>
     <string name="text_person_hint">Kullanıcı Adı</string>
+    <string name="text_password_hint">Şifre</string>
+    <string name="text_remember_switch">Beni Hatırla</string>
+    <string name="text_login">Giriş</string>
+    <string name="login_error">Kullanıcı veya şifre hatalı.</string>
 </resources>
