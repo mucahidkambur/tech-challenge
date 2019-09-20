@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@android:color/white</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="Base.Switch" parent="Theme.AppCompat.Light">

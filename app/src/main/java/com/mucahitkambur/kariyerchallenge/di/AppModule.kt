@@ -2,9 +2,11 @@ package com.mucahitkambur.kariyerchallenge.di
 
 import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
 import com.mucahitkambur.kariyerchallenge.BuildConfig
 import com.mucahitkambur.kariyerchallenge.network.ApiService
 import com.mucahitkambur.kariyerchallenge.util.API_URL
+import com.mucahitkambur.kariyerchallenge.util.PREF_FILE_NAME
 import com.mucahitkambur.tdksozluk.util.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -19,7 +21,6 @@ import javax.inject.Singleton
 @Module(includes = [ViewModelModule::class])
 class AppModule {
 
-
     @Singleton
     @Provides
     fun provideContext(application: Application): Context {
@@ -28,7 +29,12 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideHttpClient(application: Application): OkHttpClient {
+    fun providesSharedPreference(context: Context): SharedPreferences =
+        context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE)
+
+    @Singleton
+    @Provides
+    fun provideHttpClient(): OkHttpClient {
 
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
