@@ -9,7 +9,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             tools:context=".ui.main.MainFragment">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyc_orderds"
+                android:id="@+id/recycler_orderds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
@@ -39,7 +40,7 @@
                 android:textSize="16sp"
                 android:textAllCaps="false"
                 android:textColor="@color/red"
-                android:background="@drawable/button_rounded_white"
+                android:background="@drawable/btn_rounded_white"
                 android:foreground="?selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +57,7 @@
                 android:textSize="16sp"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:background="@drawable/button_rounded_red"
+                android:background="@drawable/btn_rounded_red"
                 android:foreground="?selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

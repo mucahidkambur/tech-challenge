@@ -20,6 +20,7 @@ class OrderAdapter(private val orderList: List<OrderResult>)
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         holder.bind(orderList[position])
 
+        // Order Detail'in görünürlüğü için order'ın dinlenmesi
         holder.binding.linearOrder.setOnClickListener {view ->
             val productDetailVisibility = holder.binding.relativeDetail.isVisible
             holder.binding.relativeDetail.visibility = if (productDetailVisibility)
@@ -34,6 +35,7 @@ class OrderAdapter(private val orderList: List<OrderResult>)
     class OrderViewHolder(val binding: ItemOrderLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(order: OrderResult){
+            // OrderResult nesnesinin databinding ile xml'e verilmesi
             binding.order = order
             binding.executePendingBindings()
         }

@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.mucahitkambur.kariyerchallenge.R
+import java.text.SimpleDateFormat
+import java.util.*
 
 inline fun <reified VM : ViewModel> Fragment.viewModelProvider(
     provider: ViewModelProvider.Factory

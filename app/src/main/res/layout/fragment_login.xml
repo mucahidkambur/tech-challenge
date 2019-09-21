@@ -19,7 +19,7 @@
             app:layout_constraintGuide_percent="0.12"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title_market"
+            android:id="@+id/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_market"
@@ -96,7 +96,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:background="@drawable/button_rounded_red"
+            android:background="@drawable/btn_rounded_red"
             android:foreground="?selectableItemBackground"
             android:text="@string/text_login"
             android:textAllCaps="false"

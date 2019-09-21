@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_month"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -36,9 +36,10 @@
                     android:text="@{order.date}"
                     tools:text="08"/>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    textMonth="@{order.month}"
                     android:layout_below="@+id/text_month"
                     android:layout_centerHorizontal="true"
                     tools:text="Ekim"/>
@@ -85,12 +86,16 @@
                     android:layout_marginTop="6dp">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@{order.orderName}"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:layout_toStartOf="@+id/text_price"
                         tools:text="Şampuan 250 ml"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{String.format(@string/price(order.productPrice))}"

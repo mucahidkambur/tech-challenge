@@ -9,4 +9,9 @@
     <string name="text_order">Siparişlerim</string>
     <string name="text_logout">Çıkış Yap</string>
     <string name="price">%s TL</string>
+
+    <!-- Dialog -->
+    <string name="dialog_msg">Çıkış yapmak istiyor musun?</string>
+    <string name="dialog_btn_yes">Evet</string>
+    <string name="dialog_btn_no">Hayır</string>
 </resources>

@@ -6,9 +6,12 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.mucahitkambur.kariyerchallenge.R
 import com.mucahitkambur.kariyerchallenge.model.OrderType
+import java.text.SimpleDateFormat
+import java.util.*
 
 object BindingAdapter {
 
+    // Sipariş durumu view'ının renginin ayarlanması
     @JvmStatic
     @BindingAdapter("viewColor")
     fun View.viewColor(status: String) {
@@ -19,6 +22,7 @@ object BindingAdapter {
         }
     }
 
+    // Sipariş durumu text'inin renginin ayarlanması
     @JvmStatic
     @BindingAdapter("textColor")
     fun AppCompatTextView.textColor(status: String) {
@@ -27,5 +31,16 @@ object BindingAdapter {
             OrderType.CONFIRMATION.state -> setTextColor(ContextCompat.getColor(this.context, R.color.red))
             OrderType.ROAD.state -> setTextColor(ContextCompat.getColor(this.context, R.color.green))
         }
+    }
+
+    // Int gelen Ay'ı String'e çevirme
+    @JvmStatic
+    @BindingAdapter("textMonth")
+    fun AppCompatTextView.dateToString(month: String) {
+        val calender = Calendar.getInstance()
+        val monthDate = SimpleDateFormat("MMMM", Locale("tr"))
+        calender.set(Calendar.MONTH, month.toInt() - 1)
+
+        setText(monthDate.format(calender.time))
     }
 }

@@ -21,6 +21,7 @@ class MainRepository @Inject constructor(
 
     private val getOrderResult = MutableLiveData<Resource<List<OrderResult>>>()
 
+    // Retrofit ile verinin çekilmesi
     fun getOrders(): LiveData<Resource<List<OrderResult>>> {
         appExecutors.networkIO().execute {
             try {
@@ -59,5 +60,4 @@ class MainRepository @Inject constructor(
         }
         return getOrderResult
     }
-
 }

@@ -51,6 +51,7 @@ class LoginFragment : Fragment(), Injectable {
 
         initListener()
 
+        // Beni Hatırla kontrolü
         if (checkRememberState())
             findNavController().navigate(R.id.action_fragment_login_to_main_fragment)
     }
