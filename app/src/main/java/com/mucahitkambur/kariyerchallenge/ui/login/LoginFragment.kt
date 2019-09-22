@@ -9,11 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.mucahitkambur.kariyerchallenge.R
 import com.mucahitkambur.kariyerchallenge.databinding.FragmentLoginBinding
 import com.mucahitkambur.kariyerchallenge.di.Injectable
+import com.mucahitkambur.kariyerchallenge.model.LoginState
 import com.mucahitkambur.kariyerchallenge.ui.MainViewModel
 import com.mucahitkambur.kariyerchallenge.util.*
 import javax.inject.Inject
@@ -42,6 +44,7 @@ class LoginFragment : Fragment(), Injectable {
             false
         ).apply {
             lifecycleOwner = this@LoginFragment
+            viewModel = this@LoginFragment.viewModel
         }
         return dataBinding.root
     }
@@ -49,7 +52,7 @@ class LoginFragment : Fragment(), Injectable {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        initListener()
+        observeLogin()
 
         // Beni Hatırla kontrolü
         if (checkRememberState())
@@ -60,24 +63,20 @@ class LoginFragment : Fragment(), Injectable {
         return preferences.getBoolean(PREF_REMEMBER, false)
     }
 
-    private fun initListener() {
-
-        // Giriş buton listener'ı
-        dataBinding.buttonLogin.setOnClickListener {
-            val username = dataBinding.textPerson.text.toString()
-            val password = dataBinding.textPassword.text.toString()
-            val rememberState = dataBinding.switchRemember.isChecked
-
-            if (username.isEmpty() || password.isEmpty()){
-                Toast.makeText(context, resources.getString(R.string.login_error), Toast.LENGTH_SHORT).show()
-            }else if (username == USER_NAME && password == USER_PASSWORD){
-                if (rememberState){
-                    preferences.edit().putBoolean(PREF_REMEMBER, true).apply()
+    private fun observeLogin(){
+        viewModel.loginResult.observe(this, Observer {
+            when (it){
+                LoginState.SUCCESS -> {
+                    findNavController().navigate(R.id.action_fragment_login_to_main_fragment)
                 }
-
-                findNavController().navigate(R.id.action_fragment_login_to_main_fragment)
+                LoginState.ERROR -> showError(resources.getString(R.string.login_msg_error))
+                LoginState.EMPTY_NULL -> showError(resources.getString(R.string.login_msg_empty))
             }
-        }
+        })
+    }
+
+    private fun showError(error: String){
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }
 
     override fun onResume() {

@@ -5,7 +5,8 @@
     <string name="text_password_hint">Şifre</string>
     <string name="text_remember_switch">Beni Hatırla</string>
     <string name="text_login">Giriş</string>
-    <string name="login_error">Kullanıcı veya şifre hatalı.</string>
+    <string name="login_msg_error">Kullanıcı adı veya şifre hatalı.</string>
+    <string name="login_msg_empty">Kullanıcı adı veya şifre boş olamaz.</string>
     <string name="text_order">Siparişlerim</string>
     <string name="text_logout">Çıkış Yap</string>
     <string name="price">%s TL</string>

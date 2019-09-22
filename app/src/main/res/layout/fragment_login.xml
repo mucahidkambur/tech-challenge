@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+         <variable
+             name="viewModel"
+             type="com.mucahitkambur.kariyerchallenge.ui.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,6 +51,7 @@
             android:drawableLeft="@drawable/ic_person"
             android:drawablePadding="16dp"
             android:hint="@string/text_person_hint"
+            android:text="@={viewModel.username}"
             android:paddingStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +69,7 @@
             android:drawableLeft="@drawable/ic_password"
             android:drawablePadding="16dp"
             android:hint="@string/text_password_hint"
+            android:text="@={viewModel.password}"
             android:paddingStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:checked="@={viewModel.rememberState}"
             app:layout_constraintStart_toStartOf="@+id/text_password"
             app:layout_constraintTop_toBottomOf="@+id/text_password" />
 
@@ -99,6 +104,7 @@
             android:background="@drawable/btn_rounded_red"
             android:foreground="?selectableItemBackground"
             android:text="@string/text_login"
+            android:onClick="@{() -> viewModel.login()}"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="18sp"
