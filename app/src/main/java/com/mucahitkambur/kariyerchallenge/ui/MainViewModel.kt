@@ -25,6 +25,7 @@ class MainViewModel @Inject constructor(
 
     val orderResult: LiveData<Resource<List<OrderResult>>> = repository.getOrders()
 
+    // Databinding ile üye girişi kontrollerinin viewmodel'da yapılması
     fun login(){
         if (username.value.isNullOrEmpty() || password.value.isNullOrEmpty()){
             loginResult.postValue(LoginState.EMPTY_NULL)

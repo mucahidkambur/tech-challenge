@@ -63,6 +63,7 @@ class LoginFragment : Fragment(), Injectable {
         return preferences.getBoolean(PREF_REMEMBER, false)
     }
 
+    // Login durumunu izleme ve cevaba göre işlem yapma
     private fun observeLogin(){
         viewModel.loginResult.observe(this, Observer {
             when (it){
@@ -75,6 +76,7 @@ class LoginFragment : Fragment(), Injectable {
         })
     }
 
+    // Hata gösterme fonksiyonu
     private fun showError(error: String){
         Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
     }

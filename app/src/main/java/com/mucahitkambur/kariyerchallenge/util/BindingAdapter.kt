@@ -11,6 +11,13 @@ import java.util.*
 
 object BindingAdapter {
 
+    // View'ın görünürlüğünün kontrol edilmesi
+    @JvmStatic
+    @BindingAdapter("visibleGone")
+    fun showHide(view: View, show: Boolean?) {
+        view.visibility = if (show != null && show) View.VISIBLE else View.GONE
+    }
+
     // Sipariş durumu view'ının renginin ayarlanması
     @JvmStatic
     @BindingAdapter("viewColor")

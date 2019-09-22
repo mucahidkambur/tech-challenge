@@ -39,12 +39,15 @@ class MainFragment : Fragment(), Injectable {
         savedInstanceState: Bundle?
     ): View? {
         viewModel = viewModelProvider(viewModelFactory)
-        dataBinding = DataBindingUtil.inflate(
+        dataBinding = DataBindingUtil.inflate<FragmentMainBinding>(
             inflater,
             R.layout.fragment_main,
             container,
             false
-        )
+        ).apply {
+            lifecycleOwner = this@MainFragment
+            viewModel = this@MainFragment.viewModel
+        }
         return dataBinding.root
     }
 
