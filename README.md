@@ -12,4 +12,7 @@ Challenge URL: [tech-challenge.pdf](https://github.com/mucahitkambur/tech-challe
   * Navigation: Navigation Component = Activity&Fragment'lar arası geçişler için kullanılan kütüphane
   * Network : Retrofit = HTTP işlemleri için kullanılan kütüphane
   
+## APK
+[APK](https://github.com/mucahitkambur/tech-challenge/blob/master/challenge/challenge-mucahit-kambur.apk)
+  
 [screenshot]: challenge/tanitim.jpg
