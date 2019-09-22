@@ -31,8 +31,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:paddingTop="16dp"
-                    android:textSize="21sp"
+                    android:paddingTop="28dp"
+                    android:textSize="18sp"
                     android:textAllCaps="true"
                     android:layout_gravity="center_horizontal" />
 
